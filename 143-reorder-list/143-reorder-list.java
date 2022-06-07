@@ -33,12 +33,12 @@ class Solution {
             curr = temp;
         }
         
-        ListNode trav = prev, temp3 = null;
+        ListNode trav = prev;
         curr = head;
         
         while(trav != null && curr != null){
             ListNode temp1 = curr.next, temp2 = trav.next;
-            temp3 = curr;
+     
             curr.next = trav;
             if(temp1 != null){
                 trav.next = temp1;
