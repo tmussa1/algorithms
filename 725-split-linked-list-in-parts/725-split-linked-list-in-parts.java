@@ -27,7 +27,7 @@ class Solution {
         ListNode [] result = new ListNode[k];
         
         curr = head;
-        ListNode prev = head, temp = head, temp2 = head;
+        ListNode prev = head, temp = head;
         int i = 0, count = 0;
         
         while(curr != null){
@@ -36,15 +36,13 @@ class Solution {
 
             i = 0;
             
-            temp2 = temp;
-            
             while(curr != null && i < oneListSize + plusOne){
                 prev = curr;
                 curr = curr.next;
                 i++;
             }
 
-            result[count++] = temp2;
+            result[count++] = temp;
             temp = prev.next;
             prev.next = null;
             curr = temp;
