@@ -13,7 +13,7 @@ class Solution {
         
         if(currList.size() == nums.length){
             result.add(new ArrayList<>(currList));
-            // return;
+            return;
         }
         
         for(int i = 0; i < nums.length; i++){ 
