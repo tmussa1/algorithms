@@ -3,23 +3,14 @@ class Solution {
         
         Arrays.sort(nums);
         
-        int result = Integer.MAX_VALUE;
+        int result = nums[0] + nums[1] + nums[2];
         
         if((target > 0 && nums[0] > target) || (target < 0 && nums[0] > 0)){
-            return nums[0] + nums[1] + nums[2];
+            return result;
         }
         
         for(int i = 0; i < nums.length; i++){
-            
             result = twoSumClosest(nums, target, result, i);
-            
-            if(result == target){
-                break;
-            }
-            
-            if(i >= 3 && nums[i] > 0 && nums[i] > target){
-                break;
-            }
         }
         
         return result;
