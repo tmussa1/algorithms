@@ -13,11 +13,7 @@ class Solution {
             int [] first = intervals[i];
             int [] second = intervals[i + 1];
             
-            if(first[0] < second[0] && (first[1] >= second[1] || first[1] > second[0])){
-                return false;
-            }
-            
-            if(first[0] == second[0]){
+            if(first[1] > second[0]){
                 return false;
             }
         }
