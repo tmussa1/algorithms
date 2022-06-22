@@ -39,10 +39,10 @@ class Solution {
             return;
         }
         
+        queue.offer(root.val);
+        
         kthSmallestHelper(root.left, queue);
         
         kthSmallestHelper(root.right, queue); 
-        
-        queue.offer(root.val);
     }
 }
