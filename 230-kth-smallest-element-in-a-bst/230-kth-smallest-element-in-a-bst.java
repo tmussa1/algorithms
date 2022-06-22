@@ -39,9 +39,9 @@ class Solution {
             return;
         }
         
-        kthSmallestHelper(root.left, queue);
-        
         queue.offer(root.val);
+        
+        kthSmallestHelper(root.left, queue);
         
         kthSmallestHelper(root.right, queue); 
     }
