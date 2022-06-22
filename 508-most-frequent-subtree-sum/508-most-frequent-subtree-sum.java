@@ -54,19 +54,15 @@ class Solution {
         TreeNode left = findSum(root.left, subtreeMap);
         TreeNode right = findSum(root.right, subtreeMap);
         
-        int sum = root.val;
-        
         if(left != null){
-            sum += left.val;
+            root.val += left.val;
         }
         
         if(right != null){
-            sum += right.val;
+            root.val += right.val;
         }
         
-        root.val = sum;
-        
-        subtreeMap.put(sum, subtreeMap.getOrDefault(sum, 0) + 1);
+        subtreeMap.put(root.val, subtreeMap.getOrDefault(root.val, 0) + 1);
         
         return root;
     }
