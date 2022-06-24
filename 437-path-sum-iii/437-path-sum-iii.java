@@ -23,13 +23,6 @@ class Solution {
         
         traverse(result, root, targetSum);
         
-        // for(List<Integer> elements: result){
-        //     for(Integer element: elements){
-        //         System.out.print(element + ",");
-        //     }
-        //     System.out.println();
-        // }
-        
         return result[0];
     }
     
