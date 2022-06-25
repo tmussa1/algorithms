@@ -16,23 +16,25 @@
 class Solution {
     
     public TreeNode sortedArrayToBST(int[] nums) {
-        return convertBinary(0, nums.length, nums);
+        
+        if(nums.length == 1) return new TreeNode(nums[0]);
+        
+        return sortedArrayToBST(nums, 0, nums.length);
     }
     
-    private TreeNode convertBinary(int start, int end, int[] nums){
+    private TreeNode sortedArrayToBST(int[] nums, int start, int end) {
         
         if(start >= end){
             return null;
-        }
+        }                   
         
-        int mid = start + ((end - start) / 2);
+        int middle = start + ((end - start) / 2);
         
-        TreeNode root = new TreeNode(nums[mid]);
+        TreeNode node = new TreeNode(nums[middle]);
         
-        root.left = convertBinary(start, mid, nums);
-        root.right = convertBinary(mid + 1, end, nums);
+        node.left = sortedArrayToBST(nums, start, middle);
+        node.right = sortedArrayToBST(nums, middle + 1, end);
         
-        return root;
+        return node;
     }
 }
-
