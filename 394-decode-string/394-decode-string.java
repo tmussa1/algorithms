@@ -10,12 +10,6 @@ class Solution {
         
         int index = 0;
         
-        // 1 - iterate through each characters
-        // 2 - if digit, push to numStack
-        // 3 - if characters or [, push to charStack
-        // 4 - if ], pop from charStack until we get to [, pop from numStack once and repeat
-        // what we popped from charSTack however many times as the popped element from numStack
-        
         while(index < s.length()){
             
             char c = chArr[index];
@@ -73,14 +67,3 @@ class Solution {
         return result.reverse().toString();
     }
 }
-/**
-
-numStack 3 2
-
-charStack [a [c
-
-charStack [acc
-
-"3[a2[c]]"
-
-**/
