@@ -3,12 +3,9 @@ class Solution {
         int word1Index = Integer.MAX_VALUE;
         int word2Index = Integer.MAX_VALUE;
         int diff = Integer.MAX_VALUE;
-        
-        Map<String, Integer> indexMap = new HashMap<>();
+
         
         for(int i = 0; i < wordsDict.length; i++){
-            
-            indexMap.put(wordsDict[i], i);
             
             if(wordsDict[i].equals(word1)){
                 word1Index = i;
