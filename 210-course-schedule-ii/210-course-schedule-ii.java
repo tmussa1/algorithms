@@ -4,17 +4,6 @@ class Solution {
         
         Map<Integer, List<Integer>> adjList = constructAdjacencyList(prerequisites);
         
-//         for(Map.Entry<Integer, List<Integer>> entry: adjList.entrySet()){
-            
-//             System.out.print(entry.getKey() + " ");
-            
-//             for(Integer val : entry.getValue()){
-//                 System.out.print(val + " ");
-//             }
-            
-//             System.out.println();
-//         }
-        
         LinkedList<Integer> result = new LinkedList<>();
         Set<Integer> visited = new HashSet<>();
         
@@ -52,9 +41,6 @@ class Solution {
         
         result.add(course);
         cycle.remove(course);
-        // visited.remove(course);
-        // adjList.put(course, new ArrayList<>());
-        
         
         return true;
     }
