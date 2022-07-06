@@ -51,6 +51,6 @@ class Solution {
         dfs(result, currList, root.right, targetSum - root.val);
         
         targetSum += root.val;
-        currList.remove(currList.size() - 1);
+        // currList.remove(currList.size() - 1);
     }
 }
