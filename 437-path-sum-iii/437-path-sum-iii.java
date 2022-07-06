@@ -40,7 +40,6 @@ class Solution {
        if(root == null) return;
         
        if(targetSum == root.val){
-            // currList.add(root.val);
             result[0] += 1;
         }
         
