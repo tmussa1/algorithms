@@ -42,7 +42,6 @@ class Solution {
        if(targetSum == root.val){
             currList.add(root.val);
             result[0] += 1;
-            // currList.remove(currList.size() - 1);
         }
         
         currList.add(root.val);
