@@ -47,7 +47,5 @@ class Solution {
         
         dfs(result, currList, root.left, targetSum - root.val);
         dfs(result, currList, root.right, targetSum - root.val);
-        
-        // targetSum += root.val;
     }
 }
