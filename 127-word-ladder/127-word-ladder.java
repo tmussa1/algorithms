@@ -12,9 +12,18 @@ class Solution {
         
         Map<String, List<String>> adjList = constructAdjList(wordList);
         
-        System.out.println(adjList);
+        int result = 0;
         
-        return bfs(adjList, beginWord, endWord);
+       for(int j = 0; j < beginWord.length(); j++){
+           
+          String key = beginWord.substring(0, j) + "*" + beginWord.substring(j + 1);
+           
+          if(adjList.containsKey(key)){
+              result = Math.max(result, bfs(adjList, beginWord, endWord));
+          }
+       }
+        
+        return result;
     }
     
     int bfs(Map<String, List<String>> adjList, String beginWord, String endWord){
@@ -37,10 +46,17 @@ class Solution {
                 
                 if(currWord.equals(endWord)) return result;
                 
-                for(String element: adjList.get(currWord)){
-                    if(!visited.contains(element)){
-                        visited.add(element);
-                        queue.offer(element);
+                for(int j = 0; j < currWord.length(); j++){
+
+                    String key = currWord.substring(0, j) + "*" + currWord.substring(j + 1);
+                    
+                    if(adjList.containsKey(key)){
+                        for(String element: adjList.get(key)){
+                            if(!visited.contains(element)){
+                                visited.add(element);
+                                queue.offer(element);
+                            }
+                        }
                     }
                 }
             }
@@ -57,31 +73,15 @@ class Solution {
         
         for(int i = 0; i < wordList.size(); i++){
             String currentWord = wordList.get(i);
-            List<String> currList = adjList.getOrDefault(currentWord, new ArrayList<>());
-            for(int j = 0; j < wordList.size(); j++){
-                String neighborWord = wordList.get(j);
-                if(!currentWord.equals(neighborWord) && oneCharAway(currentWord, neighborWord)){
-                    currList.add(neighborWord);
-                }
+            for(int j = 0; j < currentWord.length(); j++){
+                String key = currentWord.substring(0, j) + "*" + currentWord.substring(j + 1);
+                List<String> currList = adjList.getOrDefault(key, new ArrayList<>());
+                currList.add(currentWord);
+                adjList.put(key, currList);
             }
-            adjList.put(currentWord, currList);
         }
         
         return adjList;
-    }
-    
-    boolean oneCharAway(String currentWord, String neighborWord){
-        
-        int matches = 0;
-        char [] currentWordArray = currentWord.toCharArray(), neighborWordArray = neighborWord.toCharArray();
-        
-        for(int i = 0; i < currentWord.length(); i++){
-            if(currentWordArray[i] == neighborWordArray[i]){
-                matches++;
-            }
-        }
-        
-        return matches == currentWord.length() - 1;
     }
 }
 /**
@@ -89,6 +89,10 @@ hit -> hot
 hot -> dot, lot, hit
 dot -> dog, hot
 dog -> cog, dot
+
+h*t -> hit, hot
+d*t -> dog, dot, hot
+*og -> dog, cog
 **/
 
 
