@@ -84,15 +84,5 @@ class Solution {
         return adjList;
     }
 }
-/**
-hit -> hot
-hot -> dot, lot, hit
-dot -> dog, hot
-dog -> cog, dot
-
-h*t -> hit, hot
-d*t -> dog, dot, hot
-*og -> dog, cog
-**/
 
 
