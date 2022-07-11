@@ -61,8 +61,6 @@ class Solution {
             }
         }
         
-        System.out.println(emailToIdxMap);
-        
         List<List<String>> result = new ArrayList<>();
         
         for(Map.Entry<String, List<Integer>> entry: emailToIdxMap.entrySet()){
@@ -75,8 +73,6 @@ class Solution {
         }
         
         for(Node node: nodes){
-            System.out.print(node.index + " ");
-            System.out.println(node.emails);
             if(node == node.parent){
                 LinkedList<String> emails = new LinkedList<>(node.emails);
                 Collections.sort(emails);
