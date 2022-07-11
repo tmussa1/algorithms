@@ -2,12 +2,8 @@ class Solution {
     
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         
-        int [] level = new int[1];
-        level[0] = 1;
-        
         if(!wordList.contains(beginWord)){
             wordList.add(beginWord);
-            level[0] = 0;
         }
         
         Map<String, List<String>> adjList = constructAdjList(wordList);
