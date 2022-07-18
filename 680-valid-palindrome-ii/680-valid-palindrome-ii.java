@@ -22,7 +22,7 @@ class Solution {
     
     private boolean checkPalindrome(String s, int left, int right){
         
-        while(left < s.length() && right >= 0 && left < right){
+        while(left < right){
             
             if(s.charAt(left) != s.charAt(right)){
                 return false;
