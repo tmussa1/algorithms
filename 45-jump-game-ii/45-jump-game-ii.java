@@ -5,10 +5,6 @@ class Solution {
         
         int result = jump(nums, 0, memo);
         
-        for(int i = 0; i < memo.length; i++){
-          System.out.println(memo[i]);
-        }
-        
        return result;
     }
     
