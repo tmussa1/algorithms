@@ -1,9 +1,10 @@
 class Solution {
     public int jump(int[] nums) {
-        int [] memo = new int[nums.length];
-        Arrays.fill(memo, -1);
         
-        int result = jump(nums, 0, memo);
+       int [] memo = new int[nums.length];
+       Arrays.fill(memo, -1);
+        
+       int result = jump(nums, 0, memo);
         
        return result;
     }
