@@ -32,7 +32,7 @@ class Solution {
 
                 result.add(new HashSet<>(currList));
 
-                backtrack(result, currList, nums, index + 1);
+                backtrack(result, currList, nums, i + 1);
 
                 currList.remove(curr);
             }
