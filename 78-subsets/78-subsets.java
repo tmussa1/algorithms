@@ -2,21 +2,15 @@ class Solution {
     
     public List<List<Integer>> subsets(int[] nums) {
         
-        Set<Set<Integer>> result = new HashSet<>();
-        result.add(new HashSet<>());
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(new ArrayList<>());
         
-        backtrack(result, new HashSet<>(), nums, 0);
+        backtrack(result, new ArrayList<>(), nums, 0);
         
-        Set<List<Integer>> finalResult = new HashSet<>();
-        
-        for(Set<Integer> elements: result){
-            finalResult.add(new ArrayList<>(elements));
-        }
-        
-        return new ArrayList<>(finalResult);
+        return result;
     }
     
-    private void backtrack(Set<Set<Integer>> result, Set<Integer> currList, int[] nums, int index){
+    private void backtrack(List<List<Integer>> result, List<Integer> currList, int[] nums, int index){
         
         if(currList.size() >= nums.length){
             return;
@@ -25,17 +19,14 @@ class Solution {
         for(int i = index; i < nums.length; i++){
             
             int curr = nums[i];
-            
-            if(!currList.contains(curr)){
                 
-                currList.add(curr);
+            currList.add(curr);
 
-                result.add(new HashSet<>(currList));
+            result.add(new ArrayList<>(currList));
 
-                backtrack(result, currList, nums, i + 1);
+            backtrack(result, currList, nums, i + 1);
 
-                currList.remove(curr);
-            }
+            currList.remove(currList.size() - 1);
         }
     }
 }
