@@ -27,6 +27,3 @@ class Solution {
         return false;
     }
 }
-
-// 23, 25, 29, 35, 42
-// 5, 1, 5
