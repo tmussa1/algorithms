@@ -12,7 +12,7 @@ class Solution {
                                 List<List<String>> result, LinkedList<String> currList,
                                 int index){
         
-        if(index == s.length()){
+        if(index >= s.length()){
             result.add(new LinkedList<>(currList));
         }
         
