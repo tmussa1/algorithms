@@ -14,7 +14,6 @@ class Solution {
         
         if(index == s.length()){
             result.add(new LinkedList<>(currList));
-            return;
         }
         
         for(int i = index; i < s.length(); i++){
