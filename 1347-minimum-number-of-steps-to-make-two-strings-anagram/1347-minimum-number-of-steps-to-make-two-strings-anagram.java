@@ -11,9 +11,6 @@ class Solution {
             tMap.put(c2, tMap.getOrDefault(c2, 0) + 1);
         }
         
-        System.out.println(sMap);
-        System.out.println(tMap);
-        
         int result = 0;
         
         for(Map.Entry<Character, Integer> entry: tMap.entrySet()){
