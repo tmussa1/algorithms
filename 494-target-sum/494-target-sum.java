@@ -3,7 +3,7 @@ class Solution {
         int sum = Arrays.stream(nums).sum();
         int targetSum = (sum + target) / 2;
         
-        if(((sum + target) & 1) == 1 || targetSum < 0){
+        if((sum + target) % 2 == 1 || targetSum < 0){
             return 0;
         }
        
