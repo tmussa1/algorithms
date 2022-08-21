@@ -17,25 +17,18 @@ class Solution {
     
     public int countUnivalSubtrees(TreeNode root) {
         
-        int [] result = new int[1];
-        
-        countUnivalSubtrees(root, result);
-        
-        return result[0];
-    }
-    
-    private void countUnivalSubtrees(TreeNode root, int [] result){
-        
         if(root == null){
-            return;
+            return 0;
         }
         
+        int count = 0;
         if(areEqual(root, root.val)){
-            result[0] += 1;
+           count += 1;
         }
         
-        countUnivalSubtrees(root.left, result);
-        countUnivalSubtrees(root.right, result);
+        count += countUnivalSubtrees(root.left) + countUnivalSubtrees(root.right);
+        
+        return count;
     }
     
     boolean areEqual(TreeNode root, int value) {
