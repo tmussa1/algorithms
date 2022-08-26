@@ -19,8 +19,6 @@ class Solution {
             minRemovals -= max;
             
             max = 0;
-            
-            if(firstIndex == index) index++;
         }
         
         return minRemovals;
