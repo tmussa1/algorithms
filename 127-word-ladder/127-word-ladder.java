@@ -10,14 +10,14 @@ class Solution {
         
         int result = 0;
         
-       for(int j = 0; j < beginWord.length(); j++){
+        for(int j = 0; j < beginWord.length(); j++){
            
           String key = beginWord.substring(0, j) + "*" + beginWord.substring(j + 1);
            
           if(adjList.containsKey(key)){
               result = Math.max(result, bfs(adjList, beginWord, endWord));
           }
-       }
+        }
         
         return result;
     }
