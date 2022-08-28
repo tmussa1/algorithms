@@ -3,13 +3,15 @@ class Solution {
         
         List<Integer> result = new ArrayList<>();
         
-        Set<Integer> seen = new HashSet<>();
-        
         for(int i = 0; i < nums.length; i++){
-            if(seen.contains(nums[i])){
-                result.add(nums[i]);
+            
+            int index = Math.abs(nums[i]) - 1;
+            
+            if(nums[index] < 0){
+                result.add(Math.abs(nums[i]));
             }
-            seen.add(nums[i]);
+            
+            nums[index] *= -1;
         }
         return result;
     }
