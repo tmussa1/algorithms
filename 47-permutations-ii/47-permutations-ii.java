@@ -29,8 +29,7 @@ class Solution {
         
         for(int i = 0; i < nums.length; i++){
             
-            if(!currList.contains(nums[i]) 
-               || countMap.get(nums[i]) > 0){
+            if(countMap.get(nums[i]) > 0){
                 currList.add(nums[i]);
                 countMap.put(nums[i], countMap.get(nums[i]) - 1);
                 recurse(result, countMap, nums, currList);
