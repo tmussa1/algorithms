@@ -30,8 +30,6 @@ class Solution {
                 String insert = s.substring(0, i) + tChar + s.substring(i);
                 String remove = s.substring(0, i) + s.substring(i + 1);
                 String replace = s.substring(0, i) + tChar + s.substring(i + 1);
-                
-                System.out.println("I " + insert + " R " + remove + " " + replace);
                 if(insert.equals(t) || remove.equals(t) || replace.equals(t)){
                     return true;
                 } else {
