@@ -4,7 +4,7 @@ class Solution {
         
         int sum = Arrays.stream(piles).sum();
         
-        return true;
+        return stoneGame(piles, 0, piles.length - 1, 0, sum / 2, new Boolean[piles.length][piles.length]);
     }
     
     private boolean stoneGame(int[] piles, int left, int right, int currentSum,
