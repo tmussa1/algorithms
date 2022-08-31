@@ -1,14 +1,10 @@
 class Solution {
     
-    enum Player {
-        PLAYER_1, PLAYER_2
-    }
-    
     public boolean canWin(String currentState) {
-        return canWin(new StringBuilder(currentState), new HashMap<String, Boolean>(), Player.PLAYER_1);
+        return canWin(new StringBuilder(currentState), new HashMap<String, Boolean>());
     }
     
-    private boolean canWin(StringBuilder currentState, Map<String, Boolean> memo, Player player){
+    private boolean canWin(StringBuilder currentState, Map<String, Boolean> memo){
         
         String key = currentState.toString();
         
@@ -24,7 +20,7 @@ class Solution {
                 
                 currentState.replace(i, i + 2, "--");
                 
-                if(!canWin(currentState, memo, player == Player.PLAYER_2 ? Player.PLAYER_1 : Player.PLAYER_2)){
+                if(!canWin(currentState, memo)){
                     currentState.replace(i, i + 2, temp2);
                     memo.put(key, true);
                     return true;
