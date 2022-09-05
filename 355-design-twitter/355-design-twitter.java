@@ -35,13 +35,8 @@ class Twitter {
         for(Integer followee: followees){
             
             if(tweetMap.containsKey(followee)){
-                
                 TreeSet<Tweet> tweets = tweetMap.get(followee);
                 tweetsQueue.addAll(tweets);
-                
-                // while(tweetsQueue.size() > MAX_TWEET_SIZE){
-                //     tweetsQueue.poll();
-                // }
             }
         }
         
