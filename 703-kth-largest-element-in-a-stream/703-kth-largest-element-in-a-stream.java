@@ -11,10 +11,10 @@ class KthLargest {
         
         for(int i = 0; i < nums.length; i++){
             queue.offer(nums[i]);
-        }
-        
-        while(queue.size() > k){
+            
+           if(queue.size() > k){
             queue.poll();
+           }
         }
     }
     
