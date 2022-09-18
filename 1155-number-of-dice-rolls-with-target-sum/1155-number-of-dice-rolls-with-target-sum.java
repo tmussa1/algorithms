@@ -23,8 +23,8 @@ class Solution {
             long result = 0L;
             for(int die = 1; die <= k; die++){
                 result += backtrack(n - 1, k, target - die, memo);
-                memo[n][target] = (int) (result % (Math.pow(10, 9) + 7));
             }
+            memo[n][target] = (int) (result % (Math.pow(10, 9) + 7));
         }
         
         return memo[n][target];
