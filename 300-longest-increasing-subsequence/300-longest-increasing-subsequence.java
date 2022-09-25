@@ -2,7 +2,7 @@ class Solution {
     
     public int lengthOfLIS(int[] nums) {
         
-        int max = 0;
+        int max = 1;
         int [] dp = new int[nums.length];
         Arrays.fill(dp, 1);
         
@@ -16,8 +16,9 @@ class Solution {
                 }
                 j--;
             }
+            max = Math.max(max, dp[i]);
         }
         
-        return Arrays.stream(dp).max().getAsInt();
+        return max;
     }
 }
