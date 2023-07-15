@@ -8,7 +8,6 @@ class Solution {
         
         while(end >= 0){
             if(n < 0 || (m >= 0 && nums1[m] > nums2[n])){
-                if(m < 0) break;
                 nums1[end] = nums1[m];
                 m--;
             } else {
