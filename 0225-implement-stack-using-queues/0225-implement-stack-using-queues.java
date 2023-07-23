@@ -26,7 +26,6 @@ class MyStack {
             queue2.offerFirst(queue1.poll());
         }
         
-        System.out.println(queue2);
         
         return queue2.peek();
     }
