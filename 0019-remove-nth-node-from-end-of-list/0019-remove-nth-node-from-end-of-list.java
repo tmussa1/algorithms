@@ -37,8 +37,6 @@ class Solution {
             dummy.next = head.next;
             return dummy.next;
         }
-        
-        // if(curr.next == null) return null;
             
         curr.next = curr.next.next;
         
