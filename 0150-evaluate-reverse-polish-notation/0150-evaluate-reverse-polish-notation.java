@@ -34,12 +34,6 @@ class Solution {
             }
         }
         
-        int sum = 0;
-        
-        // while(!operands.isEmpty()){
-        //     sum += operands.pop();
-        // }
-        
         return operands.pop();
     }
     
