@@ -36,11 +36,11 @@ class Solution {
         
         int sum = 0;
         
-        while(!operands.isEmpty()){
-            sum += operands.pop();
-        }
+        // while(!operands.isEmpty()){
+        //     sum += operands.pop();
+        // }
         
-        return sum;
+        return operands.pop();
     }
     
     
