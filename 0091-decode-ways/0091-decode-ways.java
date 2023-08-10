@@ -15,12 +15,10 @@ class Solution {
         int ways = 0;
         
         if(index + 1 <= s.length() && isDecodable(s.substring(index, index + 1))){
-            System.out.println("index 1 " + s.substring(index, index + 1));
             ways += canDecod(memo, s, index + 1);
         } 
         
         if(index + 2 <= s.length() && isDecodable(s.substring(index, index + 2))){
-            System.out.println("index 2 " + s.substring(index, index + 2));
             ways += canDecod(memo, s, index + 2);
         } 
         
