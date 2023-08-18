@@ -47,14 +47,10 @@ class Leaderboard {
             count -= size;
         }
         
-         System.out.println("top " + this.scorePlayer);
-         System.out.println("K " + K + " sum " + sum);
-        
         return sum;
     }
     
     public void reset(int playerId) {
-        System.out.println("Reset " + playerId);
         int score = this.playerScore.get(playerId);
         Set<Integer> player = this.scorePlayer.get(score);
         player.remove(playerId);
