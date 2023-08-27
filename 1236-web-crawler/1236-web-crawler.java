@@ -26,8 +26,6 @@ class Solution {
             url.append(startUrl.charAt(i));
         }
         
-        System.out.println(url.toString());
-        
         dfs(visited, result, url.toString(), startUrl, htmlParser);
         
         return new ArrayList<>(result);
