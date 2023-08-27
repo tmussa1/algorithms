@@ -18,15 +18,11 @@ class Solution {
                 right++;
             }
             
-            System.out.println("diff " + diff + " right " + right);
-            
             int length = right - left;
             
             result += (length - 1) * (length - 2) / 2;
             
             left = right - 1;
-            
-            System.out.println("left " + left);
         }
         
         return result;
