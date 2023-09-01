@@ -19,9 +19,6 @@ class Solution {
             }
         }
         
-        System.out.println(max);
-        System.out.println("right " + right);
-        
         return left <= max ? left : -1;
     }
     
