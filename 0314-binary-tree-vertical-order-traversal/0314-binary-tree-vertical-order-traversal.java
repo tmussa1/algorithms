@@ -40,7 +40,6 @@ class Solution {
             
             Map.Entry<Pair<Integer, Integer>, ArrayList<Integer>> entry = queue.poll();
             List<Integer> lst = resultMap.getOrDefault(entry.getKey().getKey(), new ArrayList<>());
-          //  Collections.sort(entry.getValue());
             lst.addAll(entry.getValue());
             resultMap.put(entry.getKey().getKey(), lst);
         }
