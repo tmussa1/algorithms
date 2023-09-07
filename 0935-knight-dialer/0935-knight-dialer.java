@@ -1,27 +1,27 @@
 class Solution {
     
         
-    long MOD = 1_000_000_007;
+    int MOD = 1_000_000_007;
     
     public int knightDialer(int n) {
         
         Map<Integer, List<Integer>> adjList = buildAdjList();
         
-        long result = 0;
+        int result = 0;
         
-        Map<String, Long> cacheMap = new HashMap<>();
+        Map<String, Integer> cacheMap = new HashMap<>();
         
         for(int i = 0; i <= 9; i++){
-            long sum = knightDialer(n, i, 1, cacheMap, adjList);
+            int sum = knightDialer(n, i, 1, cacheMap, adjList);
             result = (result + sum) % MOD;
         }
         
-        return (int) result;
+        return result;
     }
     
-    public long knightDialer(int n, int node,
+    public int knightDialer(int n, int node,
                             int count,
-                            Map<String, Long> cacheMap,
+                            Map<String, Integer> cacheMap,
                             Map<Integer, List<Integer>> adjList) {
         
         if(count == n){
@@ -32,7 +32,7 @@ class Solution {
         
         if(cacheMap.containsKey(key)) return cacheMap.get(key);
         
-        long result = 0;
+        int result = 0;
         
         for(Integer neighbor: adjList.get(node)){
             count++;
