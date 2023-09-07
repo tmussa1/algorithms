@@ -13,7 +13,6 @@ class Solution {
         
         for(int i = 0; i <= 9; i++){
             long sum = knightDialer(n, i, 1, cacheMap, adjList);
-            sum %= MOD;
             result = (result + sum) % MOD;
         }
         
@@ -37,7 +36,6 @@ class Solution {
         
         for(Integer neighbor: adjList.get(node)){
             count++;
-            result %= MOD;
             result = (result + knightDialer(n, neighbor, count, cacheMap, adjList)) % MOD;
             count--;
         }
