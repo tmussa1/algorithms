@@ -6,7 +6,7 @@ class Solution {
         
         Arrays.sort(sticks);
         
-        int result = 0, index = 1;
+        int result = 0;
         
         PriorityQueue<Integer> queue = new PriorityQueue<>();
         
