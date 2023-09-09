@@ -8,7 +8,6 @@ class Solution {
             suffixes.add(s.substring(i));
             for(int j = 0; j < i; j++){
                 suffixes.add(s.substring(j, i));
-               // suffixes.add(s.substring(j));
             }  
         }
         
