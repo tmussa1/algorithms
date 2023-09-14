@@ -38,6 +38,8 @@ class Solution {
             }
         }
         
+        System.out.println(builder.toString());
+        
         return builder.length() == s.length() ? builder.toString() : "";
     }
 }
