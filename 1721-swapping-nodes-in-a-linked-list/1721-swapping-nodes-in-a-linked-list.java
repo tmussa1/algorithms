@@ -31,8 +31,6 @@ class Solution {
             lastNode = lastNode.next;
         }
         
-     //   if(k >= size) return head;
-        
         if(lastNode == null) lastNode = head;
         
         int temp = lastNode.val;
