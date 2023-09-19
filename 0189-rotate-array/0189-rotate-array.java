@@ -14,15 +14,9 @@ class Solution {
             right--;
         }
         
-        System.out.println("After swap " + Arrays.toString(nums));
-        
         reverse(nums, 0, k - 1);
         
-        System.out.println("After rev1 " + Arrays.toString(nums));
-        
         reverse(nums, k, nums.length - k - 1);
-        
-        System.out.println("After rev2 " + Arrays.toString(nums));
         
         reverse(nums, k, nums.length - 1);
     }
