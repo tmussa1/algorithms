@@ -7,88 +7,18 @@ class Solution {
         
         Arrays.fill(result, Integer.MAX_VALUE);
         
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(0);
-        
-        int level = 0;
-        
         Map<Integer, List<Integer>> adjListRed = new HashMap<>();
         Map<Integer, List<Integer>> adjListBlue = new HashMap<>();
         
         buildAdjList(n, redEdges, blueEdges, adjListRed, adjListBlue);
         
-        Set<Integer> visitedRed = new HashSet<>();
-        Set<Integer> visitedBlue = new HashSet<>();
+        bfs(adjListRed, adjListBlue, result);
         
-        while(!queue.isEmpty()){
-            
-            int size = queue.size();
-            
-            for(int i = 0; i < size; i++){
-                
-                int curr = queue.poll();
-                result[curr] = Math.min(level, result[curr]);
-                
-                if(level % 2 == 0){
-                    List<Integer> neighbors = adjListRed.get(curr);
-                    for(Integer neighbor: neighbors){
-                        if(!visitedRed.contains(neighbor)) {
-                            queue.add(neighbor);
-                            visitedRed.add(neighbor);
-                        }
-                    }
-                } else {
-                    List<Integer> neighbors = adjListBlue.get(curr);
-                    for(Integer neighbor: neighbors){
-                        if(!visitedBlue.contains(neighbor)) {
-                            queue.add(neighbor);
-                            visitedBlue.add(neighbor);
-                        }
-                    }
-                }
-            }
-            
-            level++;
-        }
+        Map<Integer, List<Integer>> temp = adjListRed;
+        adjListRed = adjListBlue;
+        adjListBlue = temp;
         
-        queue = new LinkedList<>();
-        queue.offer(0);
-        
-        level = 0;
-        
-        visitedRed = new HashSet<>();
-        visitedBlue = new HashSet<>();
-        
-        while(!queue.isEmpty()){
-            
-            int size = queue.size();
-            
-            for(int i = 0; i < size; i++){
-                
-                int curr = queue.poll();
-                result[curr] = Math.min(level, result[curr]);
-                
-                if(level % 2 == 0){
-                    List<Integer> neighbors = adjListBlue.get(curr);
-                    for(Integer neighbor: neighbors){
-                        if(!visitedBlue.contains(neighbor)) {
-                            queue.add(neighbor);
-                            visitedBlue.add(neighbor);
-                        }
-                    }
-                } else {
-                    List<Integer> neighbors = adjListRed.get(curr);
-                    for(Integer neighbor: neighbors){
-                        if(!visitedRed.contains(neighbor)) {
-                            queue.add(neighbor);
-                            visitedRed.add(neighbor);
-                        }
-                    }
-                }
-            }
-            
-            level++;
-        }
+        bfs(adjListRed, adjListBlue, result);
         
         for(int i = 0; i < n; i++){
             if(result[i] == Integer.MAX_VALUE){
@@ -97,6 +27,50 @@ class Solution {
         }
         
         return result;
+    }
+    
+    void bfs(Map<Integer, List<Integer>> adjListRed, Map<Integer, List<Integer>> adjListBlue,
+             int [] result){
+        
+        Set<Integer> visitedRed = new HashSet<>();
+        Set<Integer> visitedBlue = new HashSet<>();
+        
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(0);
+        
+        int level = 0;
+        
+        while(!queue.isEmpty()){
+            
+            int size = queue.size();
+            
+            for(int i = 0; i < size; i++){
+                
+                int curr = queue.poll();
+                result[curr] = Math.min(level, result[curr]);
+                
+                if(level % 2 == 0){
+                    List<Integer> neighbors = adjListRed.get(curr);
+                    for(Integer neighbor: neighbors){
+                        if(!visitedRed.contains(neighbor)) {
+                            queue.add(neighbor);
+                            visitedRed.add(neighbor);
+                        }
+                    }
+                } else {
+                    List<Integer> neighbors = adjListBlue.get(curr);
+                    for(Integer neighbor: neighbors){
+                        if(!visitedBlue.contains(neighbor)) {
+                            queue.add(neighbor);
+                            visitedBlue.add(neighbor);
+                        }
+                    }
+                }
+            }
+            
+            level++;
+        }
+        
     }
     
     
