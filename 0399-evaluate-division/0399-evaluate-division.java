@@ -28,8 +28,6 @@ class Solution {
          Queue<Pair<String, Double>> queue = new LinkedList<>();
          queue.offer(node);
         
-         double result = 1.0;
-        
          while(!queue.isEmpty()){
             
              Pair<String, Double> curr = queue.poll();
