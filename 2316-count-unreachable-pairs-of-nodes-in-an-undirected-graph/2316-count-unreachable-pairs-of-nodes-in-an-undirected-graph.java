@@ -59,8 +59,6 @@ class Solution {
             connectedCount[findParent(nodes[i]).val] += 1;
         }   
         
-        long sum = Arrays.stream(connectedCount).sum();
-        
         long result = 0;
         
         for(int i = 0; i < n; i++){
