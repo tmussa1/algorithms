@@ -16,17 +16,12 @@ class Solution {
         
         buildAdjList(importanceMap, adjList, employees);
         
-        // System.out.println(adjList);
-        // System.out.println(importanceMap);
-        
         return dfs(adjList, importanceMap, id, new HashSet<>());
     }
     
     private int dfs(Map<Integer, List<Integer>> adjList, 
                     Map<Integer, Integer> importanceMap,
                     int id, Set<Integer> visited){
-        
-        // System.out.println(id);
         
         if(visited.contains(id)){
             return 0;
