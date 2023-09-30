@@ -40,8 +40,6 @@ class Solution {
                 
                 TreeNode parent = prevParent.get(nodes);
                 
-              //  System.out.println("Curr " + curr[0].val + " parent " + parent.val);
-                
                 if(parent != curr[1] || (parent.left == null && parent.right == curr[0])){
                     return false;
                 }
