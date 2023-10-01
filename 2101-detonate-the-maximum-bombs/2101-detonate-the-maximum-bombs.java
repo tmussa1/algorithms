@@ -6,8 +6,6 @@ class Solution {
         
         Map<Pair<Integer, Integer>, List<Pair<Integer, Integer>>> adjList = buildAdjList(bombs, countMap);
         
-      //  System.out.println(adjList);
-        
         int result = 1;
         
         for(Pair<Integer, Integer> pair: adjList.keySet()){
