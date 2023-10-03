@@ -38,7 +38,7 @@ class Solution {
        if(sum == target){
            result |= sums(nums, k, 0, 0L, target, count + 1, cache, memo);
            memo.put(key, result);
-           return result;
+          // return result;
        }
         
        if(cache[index] == '0'){
