@@ -29,8 +29,6 @@ class Solution {
         
         if(min != Integer.MAX_VALUE && max != Integer.MIN_VALUE) {
             res = Math.abs(min - max);
-            res = Math.min(res, Math.abs(root.val - min));
-            res = Math.min(res, Math.abs(root.val - max));
         }
         
         if(min != Integer.MAX_VALUE) {
