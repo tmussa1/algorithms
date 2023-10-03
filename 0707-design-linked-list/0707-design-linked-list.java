@@ -42,7 +42,6 @@ class MyLinkedList {
         
         if(head == null){
             head = newNode;
-            System.out.println("head " + head.val);
             return;
         }
         
@@ -81,21 +80,12 @@ class MyLinkedList {
         
         if(head == null){
             head = newNode;
-            System.out.println("head new " + head.val);
             return;
         }
         
         if(index == 0){
             newNode.next = head;
             head = newNode;
-            System.out.println("head zero " + head.val);
-            
-            Node curr = head;
-        
-        while(curr != null){
-            System.out.println("after " + curr.val);
-            curr = curr.next;
-        }
             return;
         }
         
