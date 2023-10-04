@@ -21,7 +21,6 @@ class Solution {
                                       String prev) {
         
         if(index == s.length()){
-           // System.out.println("ind " + index);
             return true;
         }
         
@@ -31,7 +30,6 @@ class Solution {
             
             if(findNumericValueDiff(prev, sub)){
                 currList.add(sub);
-            //    System.out.println("Prev " + prev + " sub " + sub);
                 if(splitStringHelper(s, i + 1, currList, sub)) {
                     return true;
                 }
@@ -57,14 +55,8 @@ class Solution {
         String newS1 = s1.substring(index1);
         String newS2 = s2.substring(index2);
         
-//         if(newS1.isEmpty() && newS2.isEmpty()) return false;
-        
-//         if(newS2.isEmpty()) return s2.equals("0") && newS1.equals("1");
-        
         BigInteger one = new BigInteger(s1);
         BigInteger two = new BigInteger(s2);
-        
-        System.out.println("One " + one + " two " + two + " diff " + one.subtract(two).equals(BigInteger.ONE));
         
         return one.subtract(two).equals(BigInteger.ONE);
     }
