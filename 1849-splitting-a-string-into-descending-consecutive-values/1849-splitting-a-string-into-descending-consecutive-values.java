@@ -38,20 +38,7 @@ class Solution {
     }
     
     private boolean findNumericValueDiff(String s1, String s2){
-        
-        int index1 = 0, index2 = 0;
-        
-        while(index1 < s1.length() && s1.charAt(index1) == '0'){
-            index1++;
-        }
-        
-        while(index2 < s2.length() && s2.charAt(index2) == '0'){
-            index2++;
-        }
-        
-        String newS1 = s1.substring(index1);
-        String newS2 = s2.substring(index2);
-        
+
         BigInteger one = new BigInteger(s1);
         BigInteger two = new BigInteger(s2);
         
