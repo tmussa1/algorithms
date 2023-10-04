@@ -8,7 +8,7 @@ class Solution {
             
             String prev = s.substring(0, i + 1);
             
-            if(splitStringHelper(s, i + 1, new LinkedList<>(), prev)) {
+            if(splitStringHelper(s, i + 1, prev)) {
                return true;
             }
         }
@@ -17,7 +17,6 @@ class Solution {
     }
     
     private boolean splitStringHelper(String s, int index,
-                                      LinkedList<String> currList,
                                       String prev) {
         
         if(index == s.length()){
@@ -29,11 +28,9 @@ class Solution {
             String sub = s.substring(index, i + 1);
             
             if(findNumericValueDiff(prev, sub)){
-                currList.add(sub);
-                if(splitStringHelper(s, i + 1, currList, sub)) {
+                if(splitStringHelper(s, i + 1, sub)) {
                     return true;
                 }
-                currList.removeLast();
             }
         }
         
