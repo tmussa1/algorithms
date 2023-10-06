@@ -26,7 +26,6 @@ class Solution {
                     prev[1] = curr[1];
                 }
             }
-            System.out.println(Arrays.toString(prev));
         }
         
         return intervals.length - result;
