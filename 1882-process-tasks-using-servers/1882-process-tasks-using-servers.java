@@ -34,7 +34,7 @@ class Solution {
             
             if(available.isEmpty()){
                 time = unavailable.peek()[0];
-            }
+            } 
             
             while(!unavailable.isEmpty() && time >= unavailable.peek()[0]){
                 int [] curr = unavailable.poll();
