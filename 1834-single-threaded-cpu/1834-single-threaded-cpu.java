@@ -26,11 +26,7 @@ class Solution {
         int index = 0, taskIndex = 0;
         long time = 0;
         
-        while(taskIndex < tasks.length || !queue.isEmpty()){
-            
-            if(queue.isEmpty() && time < tasksSorted[taskIndex][0]){
-                time = tasksSorted[taskIndex][0];
-            } 
+        while(taskIndex < tasks.length || !queue.isEmpty()){ 
             
             while(taskIndex < tasks.length && time >= tasksSorted[taskIndex][0]){
                  int [] pair1 = tasksSorted[taskIndex];
@@ -38,9 +34,13 @@ class Solution {
                  taskIndex++;
             }
             
-            int [] curr = queue.poll();
-            time += curr[1];
-            result[index++] = curr[2];
+            if(queue.isEmpty()){
+                time = tasksSorted[taskIndex][0];
+            } else {
+                int [] curr = queue.poll();
+                time += curr[1];
+                result[index++] = curr[2];
+            }
         }
         
         return result;
