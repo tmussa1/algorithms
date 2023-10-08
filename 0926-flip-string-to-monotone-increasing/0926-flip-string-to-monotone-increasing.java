@@ -27,9 +27,9 @@ class Solution {
             if(c == '0'){
                 return minFlipsMonoIncr(sArr, index + 1, length, isZero, memo);
             } else {
-                sArr[index] = '0';
+             //   sArr[index] = '0';
                 int changed = 1 + minFlipsMonoIncr(sArr, index + 1, length, isZero, memo);
-                sArr[index] = '1';
+            //    sArr[index] = '1';
                 int unchanged = minFlipsMonoIncr(sArr, index + 1, length, !isZero, memo);
                 result = Math.min(result, Math.min(changed, unchanged));
             }
@@ -37,9 +37,9 @@ class Solution {
             if(c == '1'){
                 return minFlipsMonoIncr(sArr, index + 1, length, isZero, memo);
             } else {
-                sArr[index] = '1';
+              //  sArr[index] = '1';
                 int changed = 1 + minFlipsMonoIncr(sArr, index + 1, length, isZero, memo);
-                sArr[index] = '0';
+              //  sArr[index] = '0';
                 result = Math.min(result, changed);
             }
         }
