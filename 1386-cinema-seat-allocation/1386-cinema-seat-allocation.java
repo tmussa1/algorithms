@@ -38,7 +38,7 @@ class Solution {
             
             if(left && middle && right) {
                 candidate = 0;
-            } else if((left && middle) || (right && middle) || (left && right)){
+            } else if(middle){
                 candidate = 1;
             } else {
                 if(right || left){
