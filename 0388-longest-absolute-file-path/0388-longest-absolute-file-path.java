@@ -11,7 +11,6 @@ class Solution {
         for(String word: inputSplit){
            int index = word.lastIndexOf("\t");
            word = word.substring(Math.max(0, index + 1));
-         //  System.out.println(word);
            if(tabCount.isEmpty() || index > tabCount.peek()){
                stack.push(word);
                countOfWords++;
@@ -43,8 +42,6 @@ class Solution {
                    tabCount.pop();
                }
            }
-        //   System.out.println(stack);
-        //   System.out.println(tabCount);
         }
             
         return result;
