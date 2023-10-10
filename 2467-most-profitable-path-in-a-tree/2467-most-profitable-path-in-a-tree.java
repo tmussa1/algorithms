@@ -6,9 +6,6 @@ class Solution {
         
         Map<Integer, List<Integer>> adjList = buildAdjList(edges, indegreeMap);
         
-        System.out.println(indegreeMap);
-        System.out.println(adjList);
-        
         int [] time = new int[adjList.size()];
         int [] parent = new int[adjList.size()];
         
@@ -41,8 +38,6 @@ class Solution {
             start++;
         }
         
-        System.out.println(Arrays.toString(time));
-        
         int curr = bob;
         
         start = 0;
@@ -66,8 +61,6 @@ class Solution {
         
         int result = Integer.MIN_VALUE;
         
-        System.out.println(Arrays.toString(amount));
-        
         while(!queue1.isEmpty()){
             
             int size = queue1.size();
@@ -76,8 +69,6 @@ class Solution {
                 
                 int [] curr2 = queue1.poll();
                 visited.add(curr2[0]);
-                
-                System.out.println("Curr " + Arrays.toString(curr2));
                 
                 if(indegreeMap.get(curr2[0]) == 1 && curr2[0] != 0){
                     result = Math.max(result, curr2[1]);
