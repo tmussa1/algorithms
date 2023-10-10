@@ -12,16 +12,13 @@ class Solution {
            int index = word.lastIndexOf("\t");
            word = word.substring(Math.max(0, index + 1));
            if(tabCount.isEmpty() || index > tabCount.peek()){
-               stack.push(word);
-               countOfWords++;
-               length += word.length();
-               tabCount.push(index);
                if(word.indexOf(".") != -1){
-                   result = Math.max(length + countOfWords - 1, result);
-                   countOfWords--;
-                   length -= word.length();
-                   stack.pop();
-                   tabCount.pop();
+                   result = Math.max(length + word.length() + countOfWords, result);
+               } else {
+                    stack.push(word);
+                    countOfWords++;
+                    length += word.length();
+                    tabCount.push(index); 
                }
            } else {
                while(!tabCount.isEmpty() && index <= tabCount.peek()){
@@ -30,16 +27,13 @@ class Solution {
                    countOfWords--;
                    length -= word1.length();
                }
-               stack.push(word);
-               countOfWords++;
-               length += word.length();
-               tabCount.push(index);
                if(word.indexOf(".") != -1){
-                   result = Math.max(length + countOfWords - 1, result);
-                   countOfWords--;
-                   length -= word.length();
-                   stack.pop();
-                   tabCount.pop();
+                   result = Math.max(length + word.length() + countOfWords, result);
+               } else {
+                    stack.push(word);
+                    countOfWords++;
+                    length += word.length();
+                    tabCount.push(index); 
                }
            }
         }
