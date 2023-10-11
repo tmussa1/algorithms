@@ -36,8 +36,6 @@ class Solution {
             index++;
         }
         
-        System.out.println("res " + result);
-        
         
         return result.size();
     }
