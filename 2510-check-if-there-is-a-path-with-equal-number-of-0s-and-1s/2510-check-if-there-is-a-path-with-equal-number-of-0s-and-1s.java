@@ -15,20 +15,19 @@ class Solution {
         
         String key = row + "," + col;
         
-        String memoKey = row + "," + col + "," + oneCount + "," + zeroCount;
+        String memoKey = key + "," + oneCount + "," + zeroCount;
         
-        if(row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || visited.contains(key)){
+        if(row >= grid.length || col >= grid[0].length || visited.contains(key)){
             return false;
         }
         
         if(memo.containsKey(memoKey)) return memo.get(memoKey);
         
         visited.add(key);
-        
-        boolean result = false;
-        
         oneCount += grid[row][col];
         zeroCount += (1 - grid[row][col]);
+        
+        boolean result = false;
         
         if(row + 1 < grid.length){
             result |= findPath(grid, row + 1, col, oneCount, zeroCount, visited, memo);
@@ -38,13 +37,12 @@ class Solution {
             result |= findPath(grid, row, col + 1, oneCount, zeroCount, visited, memo);
         }
         
-       oneCount -= grid[row][col];
-       zeroCount -= (1 - grid[row][col]);
-        
         memo.put(memoKey, result);
         
         visited.remove(key);
+        oneCount -= grid[row][col];
+        zeroCount -= (1 - grid[row][col]);
         
-        return result;
+        return memo.get(memoKey);
     }
 }
