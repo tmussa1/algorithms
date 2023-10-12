@@ -27,21 +27,19 @@ class Solution {
         
         boolean result = false;
         
+        oneCount += grid[row][col];
+        zeroCount += (1 - grid[row][col]);
+        
         if(row + 1 < grid.length){
-            oneCount += grid[row][col];
-            zeroCount += (1 - grid[row][col]);
             result |= findPath(grid, row + 1, col, oneCount, zeroCount, visited, memo);
-            oneCount -= grid[row][col];
-            zeroCount -= (1 - grid[row][col]);
         }
         
         if(col + 1 < grid[0].length){
-            oneCount += grid[row][col];
-            zeroCount += (1 - grid[row][col]);
             result |= findPath(grid, row, col + 1, oneCount, zeroCount, visited, memo);
-            oneCount -= grid[row][col];
-            zeroCount -= (1 - grid[row][col]);
         }
+        
+       oneCount -= grid[row][col];
+       zeroCount -= (1 - grid[row][col]);
         
         memo.put(memoKey, result);
         
