@@ -17,11 +17,11 @@ class Solution {
             return false;
         }
         
+        if(memo.containsKey(memoKey)) return memo.get(memoKey);
+        
         if(row == grid.length - 1 && col == grid[0].length - 1){
             return oneCount == zeroCount;
         }
-        
-        if(memo.containsKey(memoKey)) return memo.get(memoKey);
         
         visited.add(key);
         oneCount += grid[row][col];
