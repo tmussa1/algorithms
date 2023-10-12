@@ -9,16 +9,16 @@ class Solution {
                              int oneCount, int zeroCount,
                              Set<String> visited, Map<String, Boolean> memo){
         
-        if(row == grid.length - 1 && col == grid[0].length - 1){
-            return oneCount == zeroCount;
-        }
-        
         String key = row + "," + col;
         
         String memoKey = key + "," + oneCount + "," + zeroCount;
         
         if(row >= grid.length || col >= grid[0].length || visited.contains(key)){
             return false;
+        }
+        
+        if(row == grid.length - 1 && col == grid[0].length - 1){
+            return oneCount == zeroCount;
         }
         
         if(memo.containsKey(memoKey)) return memo.get(memoKey);
