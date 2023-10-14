@@ -21,7 +21,7 @@ class Solution {
             
             int val = mountainArr.get(mid);
             
-            if(mid - 1 >= 0 && mountainArr.get(mid - 1) < val && mid + 1 < length && val > mountainArr.get(mid + 1)){
+            if(mid - 1 >= 0 && mountainArr.get(mid - 1) < val  && val > mountainArr.get(mid + 1)){
                 maxIndex = mid;
                 break;
             } else if(mid - 1 >= 0 && mountainArr.get(mid - 1) > val){
