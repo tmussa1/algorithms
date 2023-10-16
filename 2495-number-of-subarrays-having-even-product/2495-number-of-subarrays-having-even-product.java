@@ -21,8 +21,6 @@ class Solution {
             max += dp[index];
         }
         
-     //   System.out.println(Arrays.toString(dp));
-        
         return max;
     }
 }
