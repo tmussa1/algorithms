@@ -4,8 +4,6 @@ class Solution {
         
         if(sticks.length == 1) return 0;
         
-        Arrays.sort(sticks);
-        
         int result = 0;
         
         PriorityQueue<Integer> queue = new PriorityQueue<>();
