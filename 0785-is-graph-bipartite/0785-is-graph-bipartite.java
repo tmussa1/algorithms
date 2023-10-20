@@ -4,17 +4,6 @@ class Solution {
         Set<Node> visited = new HashSet<>();
         Map<Node, List<Node>> adjList = constructAdjList(graph);
         
-        for(Node nd: adjList.keySet()){
-            
-            System.out.print(nd.val + " | ");
-            
-            for(Node nd1: adjList.get(nd)){
-               System.out.print(nd1.val + " "); 
-            }
-            
-            System.out.println();
-        }
-        
         for(Node node: adjList.keySet()){
             
             if(visited.contains(node)){
