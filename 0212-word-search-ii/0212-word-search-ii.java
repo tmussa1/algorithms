@@ -77,7 +77,7 @@ class Solution {
             int nextRow = row + dir[0];
             int nextCol = col + dir[1];
             
-            if(nextRow < 0 || nextRow == board.length || nextCol < 0 || nextCol == board[0].length ||  !node.children.containsKey(board[nextRow][nextCol])){
+            if(nextRow < 0 || nextRow == board.length || nextCol < 0 || nextCol == board[0].length || !node.children.containsKey(board[nextRow][nextCol])){
              continue;
         }
             
