@@ -26,11 +26,6 @@ class Solution {
     private boolean isPossible(Integer[] matchsticks, int [] sides, int i, int target){
         
         if(i == matchsticks.length){
-           for(int j = 0; j < 4; j++){
-              if(sides[j] != target){
-                  return false;
-              }
-           }
             return true;
         }
         
