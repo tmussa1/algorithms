@@ -23,13 +23,11 @@ class Solution {
         
         for(long [] point: pointArray) {
             if(point[0] < prevEnd){
-           //     System.out.println("prev1 " + prevEnd);
                 prevEnd = Math.min(prevEnd, point[1]);
             } else if(point[0] > prevEnd){
                 result++;
                 prevEnd = point[1];
             }
-          //  System.out.println("prev " + prevEnd + " " + Arrays.toString(point));
         }
         
         return result;
