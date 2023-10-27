@@ -41,8 +41,6 @@ class Solution {
             }
         }
         
-     //   System.out.println(equalMap + " " + result);
-        
         return result;
     }
 }
