@@ -29,8 +29,6 @@ class Solution {
             
             int [] curr = queue.poll();
             
-        //    System.out.println(Arrays.toString(curr));
-            
             result += curr[0];
             
             hired++;
