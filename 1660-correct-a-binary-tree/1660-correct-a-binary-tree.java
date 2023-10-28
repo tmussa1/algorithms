@@ -24,28 +24,17 @@ class Solution {
     public TreeNode correctBinaryTree(TreeNode root) {
         
         populateIndegree(root);
-        
-        // System.out.println(indegreeMap);
-        
-//         for(Integer key: indegreeMap.keySet()){
-            
-//             if(indegreeMap.get(key) > 1){
-                
-                TreeNode node = parentMap.get(firstNode.val);
-                
-                TreeNode parent = parentMap.get(node.val);
-                
-                // System.out.println("parent " + parent.val + " key " + firstNode.val + " node " + node.val
-                //                   + " right " + node.right.val);
-                
-                if(parent.left == node){
-                    parent.left = null;
-                } else {
-                    parent.right = null;
-                }
-            //     return root;
-            // }
-        // }
+   
+        TreeNode node = parentMap.get(firstNode.val);
+
+        TreeNode parent = parentMap.get(node.val);
+
+
+        if(parent.left == node){
+            parent.left = null;
+        } else {
+            parent.right = null;
+        }
         
         return root;
     }
