@@ -62,8 +62,6 @@ class Solution {
             index++;
         }
         
-        diff += (index - firstIndex);
-        
         while(dif < 2){
             value += "0";
             dif++;
