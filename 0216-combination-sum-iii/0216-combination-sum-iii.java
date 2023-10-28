@@ -28,7 +28,6 @@ class Solution {
         }
         
         currList.add(nums[index]);
-     //   System.out.println(currList);
         combinations(result, currList, k, n, currSum + nums[index], nums, index + 1);
         currList.removeLast();
         combinations(result, currList, k, n, currSum, nums, index + 1);
