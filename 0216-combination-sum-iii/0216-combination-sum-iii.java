@@ -5,31 +5,25 @@ class Solution {
         
         List<List<Integer>> result = new ArrayList<>();
         
-        int [] nums = new int[9];
-        
-        for(int i = 0; i < 9; i++){
-            nums[i] = i + 1;
-        }
-        
-        combinations(result, new LinkedList<>(), k, n, 0, nums, 0);
+        combinations(result, new LinkedList<>(), k, n, 0, 1);
         
         return result;
     }
     
-    private void combinations(List<List<Integer>> result, LinkedList<Integer> currList, int k, int n, int currSum, int [] nums, int index){
+    private void combinations(List<List<Integer>> result, LinkedList<Integer> currList, int k, int n, int currSum, int num){
         
         if(currSum == n && currList.size() == k){
             result.add(new ArrayList<>(currList));
             return;
         }
         
-        if(currSum > n || currList.size() > k || index >= nums.length){
+        if(currSum > n || currList.size() > k || num >= 10){
             return;
         }
         
-        currList.add(nums[index]);
-        combinations(result, currList, k, n, currSum + nums[index], nums, index + 1);
+        currList.add(num);
+        combinations(result, currList, k, n, currSum + num, num + 1);
         currList.removeLast();
-        combinations(result, currList, k, n, currSum, nums, index + 1);
+        combinations(result, currList, k, n, currSum, num + 1);
     }
 }
