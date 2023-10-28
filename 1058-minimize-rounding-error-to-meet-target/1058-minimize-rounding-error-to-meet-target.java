@@ -16,10 +16,6 @@ class Solution {
         
         int diff = 0;
         
-      //  Arrays.sort(prices);
-        
-    //    System.out.println(Arrays.toString(prices));
-        
         PriorityQueue<Double> queue = new PriorityQueue<Double>((a, b) -> {
             
             double aDiff = a - Math.floor(a);
@@ -36,16 +32,12 @@ class Solution {
             queue.offer(price);
         }
         
-    //    System.out.println(queue);
-        
         double result = 0.0;
         int sum = 0;
         
         while(!queue.isEmpty()){
             
             double curr = queue.poll();
-            
-        //    System.out.println("Curr "+ curr);
             
             if(diff < target - floorSum){
                 sum += Math.ceil(curr);
@@ -69,8 +61,6 @@ class Solution {
         while(index < value.length() && value.charAt(index) != '0'){
             index++;
         }
-        
-     //   System.out.println("Index " + index + " " + firstIndex);
         
         diff += (index - firstIndex);
         
