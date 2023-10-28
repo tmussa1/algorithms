@@ -18,8 +18,6 @@ class Solution {
             return b[1] - a[1];
         });
         
-   //     System.out.println(Arrays.deepToString(combined));
-        
         PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>((a, b) -> a - b);
         
         long runningSum = 0;
@@ -36,7 +34,7 @@ class Solution {
             
             if(i >= k - 1) {
                 int num2 = combined[i][1];
-                long product = ((long) (num2 * runningSum));
+                long product = num2 * runningSum;
                 result = Math.max(result, product);
             } 
         }
