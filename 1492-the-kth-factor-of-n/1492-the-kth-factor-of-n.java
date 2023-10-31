@@ -24,8 +24,6 @@ class Solution {
                 
             }
             
-            System.out.println(factors);
-            
             NavigableSet<Integer> facts = factors.headSet(i, true);
             
             if(facts.size() >= k){
