@@ -35,7 +35,6 @@ class Solution {
             nodeSet.add(node.val);
         }
         
-   //     System.out.println(nodeSet);
         
         while(nodeSet.size() > 1){
             
@@ -47,10 +46,7 @@ class Solution {
             }
             
             nodeSet = nodesCopy;
-           // System.out.println(nodeSet);
         }
-        
-      //  System.out.println("last " + nodeSet);
         
         return nodeMap.get(new ArrayList<>(nodeSet).get(0));
     }
