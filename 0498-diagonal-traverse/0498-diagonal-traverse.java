@@ -28,8 +28,6 @@ class Solution {
                 Collections.reverse(curr);
                 lst.addAll(curr);
             }
-            
-    //        System.out.println(lst + " row " + row + " col " + col);
     
             sum++;
             level++;
@@ -47,8 +45,6 @@ class Solution {
         for(int i = 0; i < result.length; i++){
             result[i] = lst.get(i);
         }
-        
-     //   System.out.println(lst);
         
         return result;
     }
