@@ -30,14 +30,12 @@ class Solution {
         
         for(int i = k; i >= 0; i--){
             
-            if(heights[i] > height){
-                break;
-            }
-            
             if(heights[i] < height){
                 height = heights[i];
                 result = i;
-            } 
+            } else if(heights[i] > height){
+                break;
+            }
         }
         
         return result;
@@ -50,14 +48,12 @@ class Solution {
         
         for(int i = k; i < heights.length; i++){
             
-            if(heights[i] > height){
-                break;
-            }
-            
             if(heights[i] < height){
                 height = heights[i];
                 result = i;
-            } 
+            } else if(heights[i] > height){
+                break;
+            }
         }
         
         return result;
