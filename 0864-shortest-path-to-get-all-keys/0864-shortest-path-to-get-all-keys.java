@@ -75,7 +75,9 @@ class Solution {
                     
                     if(Character.isUpperCase(currChar) && ((1 << (currChar - 'A')) & keyCurr) == 0){
                         continue;
-                    } else if(!visited.contains(key1)){
+                    } 
+                    
+                    if(!visited.contains(key1)){
                         queue.offer(new int [] {nextRow, nextCol, curr[2] + 1, curr[3]});
                     }
                     
