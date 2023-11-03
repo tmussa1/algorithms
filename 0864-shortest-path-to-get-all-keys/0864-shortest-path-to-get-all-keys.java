@@ -71,9 +71,7 @@ class Solution {
                         
                         queue.offer(new int [] {nextRow, nextCol, curr[2] + 1, keyNext2});
                         
-                    }
-                    
-                    if(Character.isUpperCase(currChar) && ((1 << (currChar - 'A')) & keyCurr) == 0){
+                    } else if(Character.isUpperCase(currChar) && ((1 << (currChar - 'A')) & keyCurr) == 0){
                         continue;
                     } 
                     
