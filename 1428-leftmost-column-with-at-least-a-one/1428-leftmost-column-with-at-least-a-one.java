@@ -20,6 +20,7 @@ class Solution {
         while(row < rows){
             
             int col = binarySearch(binaryMatrix, 0, cols - 1, row);
+            cols = Math.min(col, cols);
             result = Math.min(result, col);
             
             row++;
