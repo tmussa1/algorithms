@@ -38,8 +38,6 @@ class Solution {
             
             int val = binaryMatrix.get(row, mid);
             
-          //  System.out.println("Mid " + mid + " val " + val + " col " + row);
-            
             if(val == 1){
                 result = Math.min(result, mid);
                 right = mid - 1;
